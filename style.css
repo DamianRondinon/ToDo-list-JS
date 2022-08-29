@@ -57,6 +57,17 @@ body {
   cursor: pointer;
 }
 
+.deleteAll {
+  background: linear-gradient(45deg, #ff8d0c, #ff1153);
+  padding: 10px;
+  border-radius: 15px;
+  outline: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
 .input-btn {
   display: flex;
   gap: 20px;

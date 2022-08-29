@@ -13,6 +13,7 @@ function recuperarLocalStorage() {
 
     listTasks.addEventListener('click', deleteTask);
 }
+
 recuperarLocalStorage();
 
 function deleteTask(e){
@@ -25,17 +26,21 @@ function deleteTask(e){
 
 }
 
-
-
 addTaskBtn.addEventListener('click', addTask);
 
 function addTask(){
 const task = input.value;
 
-if(task == "") {
+if (task == "") {
     showError("La tarea está vacía"); 
     return;
 }
+
+if (tasks.some((item) => task == item.task)) {
+    showError('La tarea ya existe');
+    return;
+}
+
 const taskObj = {
     task: task,
     id: Date.now(),
@@ -48,7 +53,7 @@ input.value = "";
 };
 
 function createHTML(){
-    listTasks.innerHTML = "";
+    listTasks.innerHTML = '';
     tasks.forEach((task)=> {
         const li = document.createElement("li");
         li.innerHTML = `${task.task}<span data-id='${task.id}'>X</span>`;
@@ -73,4 +78,9 @@ listTasks.appendChild(msgError);
 setTimeout(() => {
     msgError.remove()
 }, 2000);
+}
+
+function deleteAll(){
+    tasks = [];
+    createHTML();
 }
