@@ -1,6 +1,13 @@
 const input = document.getElementById("input");
 const addTaskBtn = document.getElementById("addTask");
 const listTasks = document.getElementById("list-container");
+const btnSwitch = document.querySelector('#switch');
+
+btnSwitch.addEventListener('click', ()=> {
+    document.body.classList.toggle('light');
+    btnSwitch.classList.toggle('active');
+
+});
 
 let tasks = [];
 

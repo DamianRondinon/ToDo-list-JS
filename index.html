@@ -4,12 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
   <title>To-Do-list</title>
 </head>
 </html>
 
   <body>
+    <nav>
+      <button class="switch" id="switch">
+      <span class="icon"><i class="fa-solid fa-sun"></i></span>
+      <span class="icon"><i class="fa-solid fa-moon"></i></span>
+    </button>
+    </nav>
     <section class="section-container">
       <h1>To Do List</h1>
       <p class="subtitle">
@@ -22,7 +29,7 @@
         <button onclick="deleteAll()" class="deleteAll">Delete All</button>
         <div class="list-tasks">
           <ul id="list-container">
-            <li>Nombre de la tarea <span>X</span></li>
+            <li>Nombre de la tarea <span class="deleteBtn">X</span></li>
           </ul>
         </div>
       </div>
